@@ -1,15 +1,24 @@
+/* Sprint 1 - Gary Blue's Diner - Stylesheet */
+/* Author(s): Sara Woodford, Stephen Crocker, Michelle Anderson */
+/* Date(s): June 19 2024 -  */
+
+
+/* BODY */
 .bodyCont{
     width:100%;
+    height:fit-content;
     background-color: white;
+    font-family: 'Jockey One' ,sans-serif;
 }
 
-nav a:link, a:hover, a:visited, img{
-    font-size: 36pt;
+/* NAV / HEADER*/
+nav a, img{
+    font-size: 50px;
+    text-shadow: 0px 2px 2px black;
     color: deepskyblue;
     text-decoration:none;
     text-align:center;
-    padding-left: 140px;
-    text-shadow: 0px 4px 4px black;
+    padding-left: 170px;
 }
 
 nav img{
@@ -17,6 +26,7 @@ nav img{
     margin-top: 10px;
 }
 
+/* FOOTER */
 .footerCont{
     width:100%;
     height:150px;
@@ -68,19 +78,102 @@ footer a img{
     margin-top: -6px;
 }
 
-.featureCont{
-    width:100%;
-    background-color: deepskyblue;
-}
-
+/* ABOUT PAGE */
 .garyCont{
-    width:100%;
-    height:300px;
+    height:500px;
     background-color:white;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
 }
 
 .garyCont img{
-    width:300px;
+    width:400px;
+    float:inline-start;
+    margin-top:30px;
+    margin-bottom:30px;
+    flex-shrink: 0;
+    margin-left:-50px;
+}
+
+.garyTextCont{
+    display:flex;
+    flex-direction: column;
+}
+
+.garyTextCont h1{
+    font-size:40px;
+    text-shadow: 0px 2px 2px black;
+    color: deepskyblue;
+    display:flex;
+    margin-top:-70px;
+    margin-left:50px;
+}
+
+.garyTextCont p{
+    font-size: 27px;
+    color: black;
+    text-align:left;
+    display:flex;
+    margin-left:100px;
+    margin-right:100px;
+}
+
+
+.ourCont{
+    width:100%;
+    background-color: deepskyblue;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom:30px;
+}
+
+.ourCont img{
+    flex-shrink:0;
+}
+
+#rightIMG{
+    float:right;
+    margin-right:130px;
+    padding-top:30px;
+}
+
+#leftIMG{
     float:left;
-    margin-top:20px;
+    margin-left:-20px;
+    padding-top:50px;
+}
+
+.ourIMGCont{
+    display:flex;
+    height:fit-content;
+    background-color: deepskyblue;
+}
+
+.ourTextCont{
+    display:flex;
+    background-color:deepskyblue;
+    flex-direction:column;
+    margin:50px;
+}
+
+.ourCont h1{
+    text-shadow: 0px 2px 2px black;
+    color: white;
+    font-size: 48px;
+    margin: 15px;
+}
+
+.ourCont p{
+    color:black;
+    font-size:28px;
+    margin:25px;
+    margin-left:35px;
+}
+
+.spaceCont{
+    width:100%;
+    height:50px;
+    background-color: white;
 }
