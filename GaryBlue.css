@@ -1,0 +1,86 @@
+.bodyCont{
+    width:100%;
+    background-color: white;
+}
+
+nav a:link, a:hover, a:visited, img{
+    font-size: 36pt;
+    color: deepskyblue;
+    text-decoration:none;
+    text-align:center;
+    padding-left: 140px;
+    text-shadow: 0px 4px 4px black;
+}
+
+nav img{
+    width: 200px;
+    margin-top: 10px;
+}
+
+.footerCont{
+    width:100%;
+    height:150px;
+    background-color:deepskyblue;
+    color: black;
+    font-size: 18px;
+}
+
+footer img{
+    width: 130px;
+    padding: 10px;
+    border-radius: 50%;
+    float:left;
+}
+
+footer p{
+    padding-left: 200px;
+    margin-bottom: 200px;
+    float:left;
+    margin-top:70px;
+}
+
+.space{
+    margin-left: 90px;
+}
+
+#rightBacktoTop{
+    text-align: right;
+    font-style: italic;
+    font-size:18px;
+    float:right;
+}
+
+footer a:link,a:visited{
+    text-decoration: none;
+    color: black;
+    margin-right:10px;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: black;
+    margin-right:10px;
+    cursor:pointer;
+}
+
+footer a img{
+    width:20px;
+    margin-top: -6px;
+}
+
+.featureCont{
+    width:100%;
+    background-color: deepskyblue;
+}
+
+.garyCont{
+    width:100%;
+    height:300px;
+    background-color:white;
+}
+
+.garyCont img{
+    width:300px;
+    float:left;
+    margin-top:20px;
+}
