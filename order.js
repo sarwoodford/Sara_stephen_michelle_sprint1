@@ -1,3 +1,7 @@
+/* Sprint 1 - Gary Blue's Diner - Stylesheet */
+/* Author(s): Sara Woodford, Stephen Crocker, Michelle Anderson */
+/* Date(s): June 22 2024 -  */
+
 window.addEventListener("DOMContentLoaded", function () {
 
     
