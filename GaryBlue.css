@@ -177,3 +177,37 @@ footer a img{
     height:50px;
     background-color: white;
 }
+
+
+
+
+/* Stephen Addition */
+.box {
+    border: 1px solid black;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.quantity-input {
+    display: none; /* Initially hidden */
+    margin-left: 10px;
+}
+#notification {
+    position: fixed;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    text-align: center;
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    transition: top 0.5s ease;
+}
