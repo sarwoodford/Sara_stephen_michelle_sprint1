@@ -223,20 +223,40 @@ ul {
 
 
 
-
 /* ORDER PAGE */
-.box {
+.orderBox {
     border: 1px solid black;
-    width: 400px;
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
 }
+
+.itemBox {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
 .item {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
 }
+
+.customerBox {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.customerInfo {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
 .quantity-input {
     display: none; /* Initially hidden */
     margin-left: 10px;

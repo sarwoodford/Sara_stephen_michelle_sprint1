@@ -1,54 +1,89 @@
 /* Sprint 1 - Gary Blue's Diner - Stylesheet */
 /* Author(s): Sara Woodford, Stephen Crocker, Michelle Anderson */
-/* Date(s): June 22 2024 -  */
+/* Date(s): June 22, 2024 -  */
 
 window.addEventListener("DOMContentLoaded", function () {
+  let orderList = []; // List to store order items
+  let orderCount = 0; // Counter to keep track of order number
+  let totalBill = 0;
 
-    
-    let orderList = []; // List to store order items
-    let  orderCount = 0; // Counter to keep track of order number
+  const prices = {
+    "big-gary": 5,
+    "bucket-o-chicken": 10,
+    "taters": 5,
+    "soup": 3,
+    "poutine": 7,
+    "salad": 5,
+  };
 
-    // Function to toggle visibility of input fields
-    function toggleVisibility(id) {
-        var input = document.getElementById(id);
-        // Check if the input is hidden or visible and toggle it
-        if (input.style.display === 'none' || input.style.display === '') {
-            input.style.display = 'block';
-        } else {
-            input.style.display = 'none';
-        }
+  // Function to toggle visibility of input fields
+  function toggleVisibility(id) {
+    console.log("toggleVisibility called");
+    var input = document.getElementById(id);
+    // Check if the input is hidden or visible and toggle it
+    if (input.style.display === "none" || input.style.display === "") {
+      input.style.display = "block";
+    } else {
+      input.style.display = "none";
     }
-    
-    // Ensure onclick event can access the function
-    window.toggleVisibility = toggleVisibility; 
+  }
 
-    // Add event listener to the submit button
-    document.getElementById('submitOrder').addEventListener('click', function() {
-        
-        // Get all the quantity inputs
-        const quantityInputs = document.querySelectorAll('.quantity-input');
-        quantityInputs.forEach(input => {
-            // Check if the input is visible and has a value greater than 0. If so, display the item in the order list
-            if (input.style.display !== 'none' && input.value > 0) {
-                orderList.push(`${input.value} x ${input.previousElementSibling.textContent}`);
-            }
-        });
-        // Increment the order count
-        orderCount ++;
-        // Display the order summary
-        displayOrder(orderList);
+  // Ensure onclick event can access the function
+  window.toggleVisibility = toggleVisibility;
+
+  // Add event listener to the submit button
+  document.getElementById("submitOrder").addEventListener("click", function () {
+    // Fetch input values at the time of submission
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const email = document.getElementById("email").value;
+    const creditCard = document.getElementById("credit-card").value;
+
+    // Get all the quantity inputs
+    totalBill = 0;  // Reset total bill for each order submission
+    orderList = []; // Clear order list for new orders
+
+    const quantityInputs = document.querySelectorAll(".quantity-input");
+    quantityInputs.forEach((input) => {
+      // Check if the input is visible and has a value greater than 0. If so, display the item in the order list
+      if (input.style.display !== "none" && input.value > 0) {
+        let itemPrice = input.value * prices[input.id];
+        totalBill += itemPrice;
+        orderList.push(
+          `${input.value} x ${input.previousElementSibling.textContent} = ${itemPrice}`
+        );
+      }
     });
 
-    // Function to display the order summary
-    function displayOrder(list) {
-        let orderSummary = list.join("\n");
-        alert(`Order Summary ${orderCount}:\n\n${orderSummary}`);
-
-
-        newOrderList =[]; // Create new empty order list
-        //* Persistent Order list (Input to database/file storage for persistent use)... Future project *// 
-        // Order List is only set to blank once it's data has been successfully stored
-        orderList = newOrderList; // Clear the order list after displaying the order
+    // Perform validation and display the order
+    if (validateCreditCard(creditCard) && validateFields(name, address, email, creditCard)) {
+      displayOrder(orderList, name, address, email, creditCard); // Display the order summary
+      orderCount++; // Increment the order count
+    } else {
+      alert("Please fill in all fields and ensure credit card format is correct to display a proper order");
     }
-    
+  });
+
+  function displayOrder(list, name, address, email, creditCard) {
+    let orderSummary = list.join("\n");
+    alert(`Order Summary ${orderCount}:\n\n${orderSummary}\n\nTotal: $${totalBill}\n\nCustomer Name: ${name}\nAddress: ${address}\nEmail: ${email}\nCredit Card: ${creditCard}`);
+  }
+
+  function validateCreditCard(creditCard) {
+    const creditCardFormat = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+    if (!creditCardFormat.test(creditCard)) {
+      alert("Invalid credit card format");
+      return false;
+    }
+    return true;
+  }
+
+  function validateFields(name, address, email, creditCard) {
+    if (name === "" || address === "" || email === "" || creditCard === "") {
+      alert("Please fill in all fields");
+      return false;
+    }
+    return true;
+  }
+
 });
