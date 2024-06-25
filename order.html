@@ -1,4 +1,4 @@
-<!-- Sprint 1 - Gary Blue's Diner - About Page -->
+<!-- Sprint 1 - Gary Blue's Diner - Orders Page -->
 <!-- Authors: Stephen Crocker -->
 <!--  Date(s): June 19 2024 - June 20 2024 -->
 
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./GaryBlue.css">
-    <title>Gary Blue's Diner - Home (Copied About page for template)</title>
+    <title>Gary Blue's Diner - Orders</title>
 </head>
 <body>
     <div class="bodyCont">
@@ -28,40 +28,61 @@
 <h2>Welcome to Gary Blue's Diner</h2>
 
 
+
+<div class="orderBox">
 <p>Main</p>
-<div class="box">
+<div class="itemBox">
     <div class="item">
-        <button onclick="toggleVisibility('big-gary-quantity')">Big Gary</button>
-        <input type="number" id="big-gary-quantity" class="quantity-input" value="0" min="0"/>
+        <button onclick="toggleVisibility('big-gary')">Big Gary</button>
+        <input type="number" id="big-gary" class="quantity-input" value="0" min="0"/>
 
     </div>
     <div class="item">
-        <button onclick="toggleVisibility('chicken-quantity')">Bucket O' Chicken</button>
-        <input type="number" id="chicken-quantity" class="quantity-input" value="0" min="0"/>
+        <button onclick="toggleVisibility('bucket-o-chicken')">Bucket O' Chicken</button>
+        <input type="number" id="bucket-o-chicken" class="quantity-input" value="0" min="0"/>
     </div>
 </div>
 
 <p>Sides</p>
-<div class="box">
+<div class="itemBox">
     <div class="item">
-        <button onclick="toggleVisibility('taters-quantity')">Taters</button>
-        <input type="number" id="taters-quantity" class="quantity-input" value="0" min="0"/>
+        <button onclick="toggleVisibility('taters')">Taters</button>
+        <input type="number" id="taters" class="quantity-input" value="0" min="0"/>
     </div>
     <div class="item">
-        <button onclick="toggleVisibility('soup-quantity')">Soup</button>
-        <input type="number" id="soup-quantity" class="quantity-input" value="0" min="0"/>
+        <button onclick="toggleVisibility('soup')">Soup</button>
+        <input type="number" id="soup" class="quantity-input" value="0" min="0"/>
     </div>
     <div class="item">
-        <button onclick="toggleVisibility('poutine-quantity')">Poutine</button>
-        <input type="number" id="poutine-quantity" class="quantity-input" value="0" min="0"/>
+        <button onclick="toggleVisibility('poutine')">Poutine</button>
+        <input type="number" id="poutine" class="quantity-input" value="0" min="0"/>
     </div>
     <div class="item">
-        <button onclick="toggleVisibility('salad-quantity')">Salad</button>
-        <input type="number" id="salad-quantity" class="quantity-input" value="0" min="0"/>
+        <button onclick="toggleVisibility('salad')">Salad</button>
+        <input type="number" id="salad" class="quantity-input" value="0" min="0"/>
+    </div>
+</div>
+
+<p>Customer Information</p>
+<div class="customerBox">
+    <div class="customerInfo">
+        <input type="text" id="name" placeholder="Enter customer name" />
+    </div>
+    <div class="customerInfo">
+        <input type="text" id="address" placeholder="Enter customer address" />
+    </div>
+    <div class="customerInfo">
+        <input type="text" id="email" placeholder="Enter customer email" />
+    </div>
+    <div class="customerInfo">
+        <input type="text" id="credit-card" placeholder="Enter customer credit-card" />
     </div>
 </div>
 
 <button id="submitOrder" onclick="submitOrder()">Submit Order</button>
+</div>
+
+
 
 <script src="/order.js"></script>
 
