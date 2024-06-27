@@ -185,8 +185,9 @@ nav img{
 .garyCont img {
     width: 100%;
     max-width: 400px;
-    margin: 0 30px;
     flex-shrink: 0;
+    border: #4a4a4a;
+    border-style: inset;
 }
 
 .garyTextCont {
@@ -218,7 +219,7 @@ nav img{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 30px 0;
+    
 }
 
 .ourIMGCont, .ourTextCont {
@@ -260,32 +261,57 @@ nav img{
 
 
 /* MENU PAGE */
-
-ul {
-    list-style: none;
-  }
-  
-  .flex-containerMenu {
+.flex-containerMenu {
     display: flex;
-    background-color: white;
     flex-wrap: wrap;
-    gap: 10px;
-    width: 100%px;
-    align-content: center;
-   
-  }
-  .flex-containerMenu div {
-    margin: 10px;
-    padding: 10px;
-    height: 400px;
-    font-size: 20px;
-  }
- 
-  .menu-item h2 {
-    background-color: deepskyblue;
-    padding: 10px;
-    }
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
 
+.menu-item {
+    flex: 1 1 300px;
+    background-color: white;
+    border: 2px solid deepskyblue;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    max-height: auto;
+}
+
+.menu-item h2 {
+    font-size: 24px;
+    color: deepskyblue;
+    margin-bottom: 20px;
+}
+
+.menu-item img {
+    width: 100%;
+    max-width: 300px; /* Set a max-width to ensure consistency */
+    max-height: 200px;
+    display: block; /* Ensure images are block-level for consistency */
+    margin: 0 auto 10px auto; /* Center the images and add bottom margin */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+}
+
+
+.menu-item p {
+    font-size: 16px;
+    color: black;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-item .item-name {
+    font-weight: bold;
+}
+
+.menu-item .item-price {
+    margin-left: 10px;
+    font-weight: bold;
+}
 
 
 /* ORDER PAGE */
