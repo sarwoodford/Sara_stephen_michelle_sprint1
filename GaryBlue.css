@@ -153,7 +153,7 @@ nav img{
 }
 
 .homeBox h1, .reviewBox h1 {
-    color: deepskyblue;
+    color: white;
     text-shadow: 0px 2px 2px black;
     font-size: 24pt;
 }
@@ -201,7 +201,7 @@ nav img{
 .garyTextCont h1 {
     font-size: 40px;
     text-shadow: 0px 2px 2px black;
-    color: deepskyblue;
+    color: white;
     margin-top: 0;
 }
 
