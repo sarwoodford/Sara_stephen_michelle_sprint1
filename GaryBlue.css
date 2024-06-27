@@ -17,16 +17,18 @@ nav {
     display: flex; 
     justify-content: space-between;
     align-items: center; 
-    padding: 10px 100px; 
+    padding: 1vh 1vh;
+
 }
 
-nav a, img{
-    font-size:32px;
+nav a, img {
+    font-size: 3vw; /* Adjust this value as needed */
     text-shadow: 0px 2px 2px black;
     color: deepskyblue;
-    text-decoration:none;
-    text-align:center;
-   
+    text-decoration: none;
+    text-align: center;
+  
+
 }
 
 nav img{
