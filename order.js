@@ -1,6 +1,6 @@
-/* Sprint 1 - Gary Blue's Diner - Stylesheet */
-/* Author(s): Sara Woodford, Stephen Crocker, Michelle Anderson */
-/* Date(s): June 22, 2024 -  */
+/* Sprint 1 - Gary Blue's Diner - Order JS - DOM */
+/* Author(s): Stephen Crocker, Sara Woodford, Michelle Anderson */
+/* Date(s): June 22, 2024 - June 25, 2024 */
 
 window.addEventListener("DOMContentLoaded", function () {
   let orderList = []; // List to store order items
@@ -57,18 +57,20 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // Perform validation and display the order
     if (validateCreditCard(creditCard) && validateFields(name, address, email, creditCard)) {
-      displayOrder(orderList, name, address, email, creditCard); // Display the order summary
-      orderCount++; // Increment the order count
+      displayOrder(orderList, name, address, email, creditCard);
+      orderCount++; 
     } else {
       alert("Please fill in all fields and ensure credit card format is correct to display a proper order");
     }
   });
 
+  // Function to display the order summary in an alert
   function displayOrder(list, name, address, email, creditCard) {
     let orderSummary = list.join("\n");
     alert(`Order Summary ${orderCount}:\n\n${orderSummary}\n\nTotal: $${totalBill}\n\nCustomer Name: ${name}\nAddress: ${address}\nEmail: ${email}\nCredit Card: ${creditCard}`);
   }
 
+  // Function to validate the credit card format
   function validateCreditCard(creditCard) {
     const creditCardFormat = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
     if (!creditCardFormat.test(creditCard)) {
@@ -78,6 +80,7 @@ window.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  // Function to validate all fields are filled in
   function validateFields(name, address, email, creditCard) {
     if (name === "" || address === "" || email === "" || creditCard === "") {
       alert("Please fill in all fields");
